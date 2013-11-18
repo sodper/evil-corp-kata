@@ -52,4 +52,9 @@ exports['censorString'] = {
     test.equal(evil_corp_kata.censorString('You are so friendly!'), 'You are so XXXXXXXXX', 'should censor whole word');
     test.done();
   },
+  'input with unwanted words': function(test) {
+    test.expect(1);
+    test.equal(evil_corp_kata.censorString('Objection is bad, a better thing to do, is to agree.'), 'Thoughtcrime is ungood, a gooder thing to do, is to crimestop.', 'should replace all unwanted words');
+    test.done();
+  },
 };
