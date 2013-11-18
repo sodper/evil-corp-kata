@@ -47,4 +47,9 @@ exports['censorString'] = {
     test.equal(evil_corp_kata.censorString('Such a nice day with a bright sun, makes me happy'), 'Such a XXXX day with a bright XXX, makes me XXXXX', 'should censor each word');
     test.done();
   },
+  'input with conjugation of blacklisted word': function(test) {
+    test.expect(1);
+    test.equal(evil_corp_kata.censorString('You are so friendly!'), 'You are so XXXXXXXXX', 'should censor whole word');
+    test.done();
+  },
 };
